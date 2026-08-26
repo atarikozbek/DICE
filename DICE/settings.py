@@ -59,7 +59,7 @@ SESSION_CONFIG_DEFAULTS = dict(
     eMail = '',
     study_name = 'A study about social media',
     channel_type = 'Twitter',
-    survey_link = 'https://unisg.qualtrics.com/jfe/form/SV_0DnMoLpM0VxjhrM', #https://polimi.eu.qualtrics.com/jfe/form/SV_eeS0tFcikR5hSrs
+    survey_link = 'https://yt3.googleusercontent.com/ytc/AIdro_llfi-8d2Zve1U9FXZPXZsKNB9_65U5gHwKRwAoHLOUDg=s160-c-k-c0x00ffffff-no-rjhttps://docs.google.com/forms/d/e/1FAIpQLSe4kws16PZs7gZgUajCu7jjPd7Hp9PLYzpHqEp2Fz_hzBEI4g/viewform?usp=pp_url&entry.1801043878=', #https://polimi.eu.qualtrics.com/jfe/form/SV_eeS0tFcikR5hSrs
     #survey_link = 'https://polimi.eu.qualtrics.com/jfe/form/SV_eeS0tFcikR5hSrs',
     #survey_link = '',
     dwell_threshold = 75,
@@ -76,7 +76,7 @@ SESSION_CONFIG_DEFAULTS = dict(
     delimiter=';',
     sort_by='datetime',
     condition_col='condition',
-    #search_term = #"'#Yosemite',
+    search_term = 'placeholder',#"'#Yosemite',
 
     # Legacy ?
     topics = True,
