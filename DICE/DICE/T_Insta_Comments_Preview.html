@@ -1,0 +1,16 @@
+<!-- Preview commenti sotto al post: primi 4, card IDENTICHE al modale (ns="preview") -->
+{{ if i.view_direct_comments }}
+{{ if i.comments_preview }}
+<div class="insta-comments-preview mt-2">
+    <div class="text-muted mb-2" style="font-size: 13px; cursor: pointer;"
+         data-bs-toggle="modal" data-bs-target="#replyModal_{{ i.doc_id }}">
+        View all {{ i.replies }} comments
+    </div>
+    <div class="insta-comments">
+        {{ for c in i.comments_preview }}
+        {{ include "DICE/T_Insta_Comment.html" with ns="preview" }}
+        {{ endfor }}
+    </div>
+</div>
+{{ endif }}
+{{ endif }}

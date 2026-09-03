@@ -431,6 +431,29 @@ def preprocessing(df, config):
     # riga 2 (post 2): [{'text': '50M Jobseekers. <br><br> 150+ Job Boards. <br><br> One Click.', 'user': '9GAG', 'image': '', 'image_available': False, 'like_count': 0}, { ... }, { ... }, ...]
     # ---------------------------------------------------------------------------
 
+    # VIEW DIRECT COMMENTS
+    # Flag per-post: mostra i commenti anche sotto il post (non solo nel modale).
+    if 'view_direct_comments' in df.columns:
+        df['view_direct_comments'] = df['view_direct_comments'].apply(to_bool)
+    else:
+        df['view_direct_comments'] = False
+
+    # preview_comments: quanti commenti PADRE (top-level) mostrare nella preview (per post).
+    #   n > 0                                      -> primi n (troncati al totale se n li supera)
+    #   n == 0  (o vuoto/non valido -> default 0)  -> NESSUN commento in preview
+    #   n < 0                                      -> TUTTI i commenti
+    if 'preview_comments' in df.columns:
+        df['preview_comments'] = df['preview_comments'].apply(lambda v: to_int(v, default=0))
+    else:
+        df['preview_comments'] = 0
+
+    # Commenti top-level mostrati nella preview sotto al post
+    # (list-comprehension come per 'comments', per evitare l'espansione in colonne di pandas)
+    df['comments_preview'] = [
+        ([] if not vdc else (cs if n < 0 else cs[:n]))
+        for cs, vdc, n in zip(df['comments'], df['view_direct_comments'], df['preview_comments'])
+    ]
+
     return df
 
 
