@@ -11,29 +11,34 @@
     <!-- Decision Card -->
     <div class="card mt-5 shadow-lg p-4">
         <div class="card-body">
-            <h1 class="display-4">Welcome!</h1>
+            <h1 class="display-4">Benvenuti!</h1>
+            
             <p class="lead">
-                Thank you for your interest in this study. It is anonymous and there are no right or wrong answers.
+                Grazie per l'interesse dimostrato per questo studio. La partecipazione è anonima e non ci sono risposte giuste o sbagliate.
+            </p>
+            
+            <!-- New Study Explanation -->
+            <p class="lead">
+                In questo studio, Le verrà mostrato inizialmente un feed di social media contenente 4 video all'interno di un'interfaccia che simula Instagram, dove potrà guardare i video ed esplorare le relative sezioni dei commenti. Lo scopo di questo studio è acquisire una maggiore comprensione di come le persone utilizzano i social media.
             </p>
 
             <table class="table mt-5 mb-5 table-responsive">
                 <tbody>
                     <tr>
-                        <th scope="row">Study</th>
+                        <th scope="row">Studio</th>
                         <td>{{ session.config.study_name }}</td>
                     </tr>
                     <tr>
                         <th scope="row">
-                            Consent
+                            Consenso
                         </th>
                         <td>
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" id="consent_form" required>
                                 <label class="form-check-label" for="consent_form">
-                                    I agree to the anonymized analysis of my answers for the purpose of scientific
-                                    evaluation according to the
+                                    Acconsento all'analisi in forma anonima delle mie risposte a fini di valutazione scientifica, come descritto nel
                                     <a class="text-success" data-bs-toggle="offcanvas" data-bs-target="#offcanvasconsent_form" id="consent_text" style="cursor: pointer;">
-                                        <u>consent form.</u>
+                                        <u>modulo di consenso.</u>
                                     </a>
                                 </label>
                             </div>
@@ -41,9 +46,10 @@
                     </tr>
                 </tbody>
             </table>
+            
             <div class="d-flex justify-content-center m-5">
                 <button class="btn btn-success shadow" type="submit" id="submitButton">
-                    Start
+                    Inizia
                 </button>
             </div>
 
@@ -62,4 +68,3 @@
     </div>
 </body>
 {{ endblock }}
-
