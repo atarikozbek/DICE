@@ -131,7 +131,13 @@ full-height {
 .insta-comment-avatar {
     width: 32px;
     height: 32px;
-    object-fit: cover;
+    min-width: 32px;           /* ← NEW: Prevent flex from shrinking */
+    min-height: 32px;          /* ← NEW: Prevent flex from shrinking */
+    aspect-ratio: 1 / 1;       /* ← NEW: Force perfect 1:1 square ratio */
+    object-fit: cover;         /* Existing */
+    display: block;            /* ← NEW: Fix inline image spacing issues */
+    border-radius: 50%;        /* ← NEW: Explicit circular border */
+    flex-shrink: 0;            /* ← NEW: Prevent flex parent from compressing it */
 }
 .insta-comment-avatar-icon {
     font-size: 32px;
